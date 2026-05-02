@@ -1,0 +1,27 @@
+# Project Prism - Traffic Monitor
+# Group: Athena, Naphtali, Rogen
+
+def AuthenticateUser():
+    """Requirement: Function 1"""
+    user = input("Enter Username: ")
+    if user == "admin":
+        print("Access Granted.")
+        return True
+    else:
+        print("Access Denied.")
+        return False
+
+def RunTrafficMonitor():
+    """Requirement: Function 2 + Loop + Selection"""
+    lights = ["Light 1", "Light 2", "Light 3"]
+    for light in lights:
+        status = input(f"Enter status for {light} (normal/broken): ")
+        if status == "broken":
+            print(f"ALERT: {light} requires maintenance!")
+        else:
+            print(f"{light} is working.")
+
+# Main Program Execution
+if __name__ == "__main__":
+    if AuthenticateUser():
+        RunTrafficMonitor()
