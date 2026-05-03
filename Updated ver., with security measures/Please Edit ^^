@@ -1,0 +1,46 @@
+#PROJECT PRISM: TRAFFIC LIGHT CHECKER
+#MEMBERS: ATHENA VIELLE BAUGBOG, NAPHTALI JOSH CRUZADO & ROGEN GIL TAN 
+
+
+#FUNCTION DEFINITIONS
+def RunTrafficMonitor():
+    """Requirement: Function 2 + Loop + Selection"""
+    lights = ["Light 1", "Light 2", "Light 3", "Light 4"]
+    
+    
+#LOCATION INPUT, ONLY ONCE
+    location = input("Enter location of the intersection: ")
+    print("\n--- SCANNING TRAFFIC LIGHTS ---")
+    
+    
+#PROGRAM DECIDES IF IT'S BROKEN OR NOT 
+    for light in lights:
+        import random 
+        status = random.choice(["normal", "broken"]) 
+        
+        if status == "broken":
+            print(f"ABNORMALITY SPOTTED: {light} in {location}")
+        else:
+            print(f"{light} in {location}: No errors spotted.")
+
+
+#USER INTERFACE
+print("---PROGRAM START---", "\n")
+user = input("Enter Username: ")
+
+
+#USER INPUT VALIDATION
+if user == "admin":
+    print("Access granted\n")
+    RunTrafficMonitor()
+else:
+    print("Access Denied")
+    print("Security measures commencing: ")
+    
+    
+#SECURITY MEASURES
+    for i in range(10, -1, -1):
+        print(f"System lockdown in {i} seconds...", end="\r")
+        for x in range(20000000): # Slow down
+            pass
+    print("\nACCESS REVOKED. Intruder detected! ")
